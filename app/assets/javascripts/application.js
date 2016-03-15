@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require d3
 //= require_tree .
+
+function updateBtn() {
+  document.getElementsByClassName("actions")[0].lastElementChild.disabled = true;
+  document.getElementById("edit_course_1").submit();
+  document.getElementsByClassName("actions")[0].lastElementChild.value = "Updating ...";
+}
