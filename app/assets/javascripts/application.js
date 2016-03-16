@@ -20,3 +20,15 @@ function updateBtn() {
   document.getElementById("edit_course_1").submit();
   document.getElementsByClassName("actions")[0].lastElementChild.value = "Updating ...";
 }
+
+function hideRow() {
+  var array1 = document.getElementsByClassName("association container");
+  var lastElement = array1[array1.length - 1];
+  lastElement.style.display = "none";
+}
+
+function showRow() {
+  var array1 = document.getElementsByClassName("association container");
+  var lastElement = array1[array1.length - 1];
+  lastElement.style.display = "block";
+}
