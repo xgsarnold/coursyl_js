@@ -15,20 +15,69 @@
 //= require d3
 //= require_tree .
 
-function updateBtn() {
-  document.getElementsByClassName("actions")[0].lastElementChild.disabled = true;
-  document.getElementById("edit_course_1").submit();
-  document.getElementsByClassName("actions")[0].lastElementChild.value = "Updating ...";
+function disableUpdateBtn() {
+  $(event.target).prop("disabled", true);
+  $(event.target).closest("form").submit();
+  $(event.target).val("Updating ...");
+}
+
+function bindSumbitClick() {
+  $("input[type=submit]").on("click", disableUpdateBtn);
 }
 
 function hideRow() {
-  var array1 = document.getElementsByClassName("association container");
-  var lastElement = array1[array1.length - 1];
-  lastElement.style.display = "none";
+  var associationRow = $(".association").last();
+  associationRow.css("display", "none");
 }
 
 function showRow() {
-  var array1 = document.getElementsByClassName("association container");
-  var lastElement = array1[array1.length - 1];
-  lastElement.style.display = "block";
+  var associationRow = $(".association").last();
+  associationRow.css("display", "block");
 }
+
+function bindShowRow() {
+  $(".new-association").on("click", showRow);
+}
+
+function deleteRow() {
+  $(event.target).closest(".association").css("display", "none");
+  $(event.target).siblings().last("input[type=checkbox]").prop("checked", true);
+}
+
+function bindDeleteRow() {
+  $(".delete-association").on("click", deleteRow);
+}
+
+
+// function hideDelete() {
+//   var row = event.target.parentNode.parentNode;
+//   row.style.display = "none";
+// }
+
+// function hideDelete() {
+//   var row = event.target.parentNode.parentNode;
+//   row.style.display = "none";
+// }
+//
+// function hideDelete() {
+//   var associations = $("#associations");
+//   associations.
+//    = event.target.parentNode.parentNode;
+//   row.style.display = "none";
+// }
+
+// function hideLastRow() {
+//   if ($("#associations").length > 0) {
+//     hideDelete();
+//   }
+// }
+
+$(hideRow);
+
+$(bindShowRow);
+
+$(bindSumbitClick);
+
+$(bindDeleteRow);
+
+// $(hideLastRow);
