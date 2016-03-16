@@ -48,30 +48,6 @@ function bindDeleteRow() {
   $(".delete-association").on("click", deleteRow);
 }
 
-
-// function hideDelete() {
-//   var row = event.target.parentNode.parentNode;
-//   row.style.display = "none";
-// }
-
-// function hideDelete() {
-//   var row = event.target.parentNode.parentNode;
-//   row.style.display = "none";
-// }
-//
-// function hideDelete() {
-//   var associations = $("#associations");
-//   associations.
-//    = event.target.parentNode.parentNode;
-//   row.style.display = "none";
-// }
-
-// function hideLastRow() {
-//   if ($("#associations").length > 0) {
-//     hideDelete();
-//   }
-// }
-
 $(hideRow);
 
 $(bindShowRow);
@@ -79,5 +55,3 @@ $(bindShowRow);
 $(bindSumbitClick);
 
 $(bindDeleteRow);
-
-// $(hideLastRow);
