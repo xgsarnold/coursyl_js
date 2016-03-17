@@ -18,7 +18,7 @@
     <%= link_to '<i class="fa fa-calendar" title="Edit Date"></i>'.html_safe, "#dateModal#{assignment.id}", data: {toggle: "modal", target: "#dateModal#{assignment.id}"} %>
 
     <!-- Modal -->
-    <div id="dateModal<%= assignment.id%>" class="modal hide fade"  tabindex="-1">
+    <div id="dateModal<%= assignment.id%>" class="modal fade"  tabindex="-1">
       <div class="modal-header">
         <h4 class="modal-title" id="myModalLabel">Assignment Dates</h4>
       </div>
@@ -27,12 +27,12 @@
         <table class="table">
           <tr>
             <th>
-              <%= a.label :active_at %>
-              <%= a.text_field :active_at %>
+              <%= a.label :active_at, class: "text-center"%>
+              <%= a.datetime_select :active_at %>
             </th>
             <th>
-              <%= a.label :due_at %>
-              <%= a.text_field :due_at %>
+              <%= a.label :due_at, class: "text-center" %>
+              <%= a.datetime_select :due_at %>
             </th>
           </tr>
         </table>
